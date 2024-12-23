@@ -90,7 +90,6 @@ $('body').append(this.flagRElement);
 };
 FlagR.prototype.move = function(){
 if (distanse < 50 && distanse4>50){
-
     this.x = player.x;
     this.y = player.y;
     this.flagRElement.css({
@@ -130,7 +129,7 @@ this.flagBElement.css({
 $('body').append(this.flagBElement);
 };
 FlagB.prototype.move = function(){
-if (distanse2 < 50 && distanse3 > 50){
+if (distanse2 < 50 && distanse1 > 50 &&distanse3 > 50){
 
     this.x = player1.x;
     this.y = player1.y;
@@ -169,9 +168,9 @@ var getDistanse = function(px, py, frx, fry ){
     var diffY = py - fry
     return Math.sqrt(diffX ** 2 + diffY **2 );
 }
-var getDistanse1 = function(frx, fbx, fry, fby){
-    var diffX1 = fbx - frx
-    var diffY1 = fby - fry
+var getDistanse1 = function(px, p1x, py, p1y){
+    var diffX1 = px - p1x
+    var diffY1 = py - p1y
     return Math.sqrt(diffX1 ** 2 + diffY1 **2 );
 }
 var getDistanse2 = function(px, py, fbx, fby){
@@ -270,7 +269,7 @@ var rightPressed1 = false;
     })
     var intervalId = setInterval(()=>{
         distanse = getDistanse(player.x, player.y, flagR.x, flagR.y)
-        distanse1 = getDistanse1(flagR.x, flagB.x, flagR.y, flagB.y)
+        distanse1 = getDistanse1(player.x, player1.x, player.y, player1.y)
         distanse2 = getDistanse2(player1.x, player1.y, flagB.x, flagB.y)
         distanse3 = getDistanse1(xOfRedFlag, flagB.x, yOfRedFlag, flagB.y)
         distanse4 = getDistanse1(flagR.x, xOfBlueFlag, flagR.y, yOfBlueFlag)
@@ -298,6 +297,7 @@ var rightPressed1 = false;
         if(rightPressed1){
             player.moveRight()
         }
+        $('#score').text('Score: ' + score)
         flagR.move()
         flagB.move()
         if (player.x <= 30 &&  player.y >= 860){
