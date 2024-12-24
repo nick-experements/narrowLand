@@ -90,6 +90,7 @@ $('body').append(this.flagRElement);
 };
 FlagR.prototype.move = function(){
 if (distanse < 50 && distanse4>50 && distanse1 > 50){
+    player.speed = 7
     this.x = player.x;
     this.y = player.y;
     this.flagRElement.css({
@@ -98,6 +99,7 @@ if (distanse < 50 && distanse4>50 && distanse1 > 50){
     })
 }
 else{
+    player.speed = 10
     this.x = position2.left;
     this.y = position2.top;
     this.flagRElement.css({
@@ -130,7 +132,7 @@ $('body').append(this.flagBElement);
 };
 FlagB.prototype.move = function(){
 if (distanse2 < 50 && distanse1 > 50 &&distanse3 > 50){
-
+    player1.speed = 7
     this.x = player1.x;
     this.y = player1.y;
     this.flagBElement.css({
@@ -139,6 +141,7 @@ if (distanse2 < 50 && distanse1 > 50 &&distanse3 > 50){
     })
 }
 else{
+    player1.speed = 10
     this.x = position4.left;
     this.y = position4.top;
     this.flagBElement.css({
