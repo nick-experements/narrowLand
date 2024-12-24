@@ -89,7 +89,7 @@ this.flagRElement.css({
 $('body').append(this.flagRElement);
 };
 FlagR.prototype.move = function(){
-if (distanse < 50 && distanse4>50){
+if (distanse < 50 && distanse4>50 && distanse1 > 50){
     this.x = player.x;
     this.y = player.y;
     this.flagRElement.css({
