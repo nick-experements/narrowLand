@@ -89,7 +89,7 @@ this.flagRElement.css({
 $('body').append(this.flagRElement);
 };
 FlagR.prototype.move = function(){
-if (distanse < 50 && distanse4>50 && distanse1 > 50){
+if (distanse < 50 && distanse1 > 50 && distanse4 > 50 || distanse < 50 && (distanse1 < 50 && qNotPressed)){
     player.speed = 7
     this.x = player.x;
     this.y = player.y;
@@ -131,7 +131,7 @@ this.flagBElement.css({
 $('body').append(this.flagBElement);
 };
 FlagB.prototype.move = function(){
-if (distanse2 < 50 && distanse1 > 50 &&distanse3 > 50){
+if (distanse2 < 50 && distanse3 > 50  && distanse1 > 50 || distanse2 < 50 && (distanse1 < 50 && shiftNotPressed)){
     player1.speed = 7
     this.x = player1.x;
     this.y = player1.y;
@@ -204,8 +204,12 @@ var keyActions = {
     38: 'up1',
     37: 'left1',
     40: 'down1',
-    39: 'right1'
+    39: 'right1',
+    81: 'q',
+    16: 'shift'
 }
+var qNotPressed = true;
+var shiftNotPressed = true;
 var upPressed = false;
 var leftPressed = false;
 var downPressed = false;
@@ -227,6 +231,12 @@ var rightPressed1 = false;
         if(keyActions[event.keyCode] === 'right'){
             rightPressed = true
         }
+        if(keyActions[event.keyCode] === 'q'){
+            qNotPressed = false
+        }
+        if(keyActions[event.keyCode] === 'shift'){
+            shiftNotPressed = false
+        }
     })
     $('body').keyup((event)=>{
         if(keyActions[event.keyCode] === 'up'){
@@ -240,6 +250,12 @@ var rightPressed1 = false;
         }
         if(keyActions[event.keyCode] === 'right'){
             rightPressed = false;
+        }
+        if(keyActions[event.keyCode] === 'q'){
+            qNotPressed = true;
+        }
+        if(keyActions[event.keyCode] === 'shift'){
+            shiftNotPressed = true;
         }
     })
     $('body').keydown((event)=>{

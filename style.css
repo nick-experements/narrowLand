@@ -1,0 +1,150 @@
+@keyframes bird {
+    0%  {transform:rotate(90deg);top: 40%;left: 60%;}
+    25% {top: 60%; left: 60%;transform:rotate(0deg);}
+    50% {top: 60%; left: 80%;transform:rotate(-90deg);}
+    75% {top: 40%; left: 80%;transform:rotate(-180deg)}
+    100% {top: 40%;left: 60%;transform:rotate(-270deg)}
+    }
+    @keyframes bird1 {
+    0%  {transform:rotate(90deg);top: 30%;left: 30%;}
+    25% {top: 50%; left: 30%;transform:rotate(0deg);}
+    50% {top: 50%; left: 50%;transform:rotate(-90deg)}
+    75% {top: 30%; left: 50%;transform:rotate(-180deg)}
+    100% {top: 30%;left: 30%;transform:rotate(-270deg)}
+    }
+    html,
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+
+        background-color: #ffac50;
+    }
+
+
+    #map{
+        height: 100%;
+        width: 100%;
+        object-fit:contain;
+        
+    }
+    /* #head{
+        position: absolute;
+        height: 10%;
+        width: auto;
+        top: 88%;
+        left: 76%;
+        transition: 0.7s;
+    } */
+    /* #flagB{
+        position: absolute;
+        height: 10%;
+        width: auto;
+        top: 81%;
+        left: 91.5%;
+        transition: 0.7s;
+    }  */
+    /* #flagR{
+        position: absolute;
+        height: 10%;
+        width: auto;
+        top: 5%;
+        left: 5%;
+        transition: 0.7s;
+    } */
+    /* #flagR:hover{
+        filter: drop-shadow(0 0 12px red);
+    } */
+    /* #flagB:hover{
+        filter: drop-shadow(0 0 12px blue);
+    } */
+    #bird{
+        position: absolute;
+        height: 5%;
+        width: auto;
+        top: 40%;
+        left: 60%;
+        animation-name: bird;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    #bird1{
+        position: absolute;
+        height: 5%;
+        width: auto;
+        top: 30%;
+        left: 30%;
+        animation-name: bird1;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    #mainHead{
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: black;
+        color: white;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+        transition: 0.7s;
+    }
+    #mainHead:hover{
+        filter: drop-shadow(0 0 12px green);
+
+    }
+    #cross1{
+        position: absolute;
+        height: 5%;
+        width: auto;
+        top: 12%;
+        left: 4.5%;
+        transition: 0.7s;
+        transform: translate(-50%, -50%);
+    } 
+    #cross2{
+        position: absolute;
+        height: 5%;
+        width: auto;
+        transition: 0.7s;
+        top: 88%;
+        left: 91%;
+        transform: translate(-50%, -50%);
+    } 
+    #houseB{
+        position: absolute;
+        height: 15%;
+        width: auto;
+        top: 89%;
+        left: 87%;
+        transition: 0.7s;
+        transform: translate(-50%, -50%);
+    } 
+    #houseR{
+        position: absolute;
+        height: 15%;
+        width: auto;
+        top: 1%;
+        left: 10%;
+        transition: 0.7s;
+    }
+    #pressToPlay{
+        text-decoration: underline black 3px;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: black;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 50px;
+        transform: translate(-50%, -50%);
+        transition: 0.7s;
+    }
+    #score{
+        position: absolute;
+        top: 5%;
+        left: 90%;
+        font-size: 50px;
+        transform: translate(-50%, -50%);
+    }
