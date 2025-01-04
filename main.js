@@ -89,7 +89,7 @@ this.flagRElement.css({
 $('body').append(this.flagRElement);
 };
 FlagR.prototype.move = function(){
-if (distanse < 50 && distanse1 > 50 && distanse4 > 50 || distanse < 50 && (distanse1 < 50 && qNotPressed)){
+if (distanse < 50 && distanse1 > 50 && distanse4 > 50 || distanse < 50 && (distanse1 < 50 && eNotPressed)){
     player.speed = 7
     this.x = player.x;
     this.y = player.y;
@@ -205,10 +205,10 @@ var keyActions = {
     37: 'left1',
     40: 'down1',
     39: 'right1',
-    81: 'q',
+    69: 'e',
     16: 'shift'
 }
-var qNotPressed = true;
+var eNotPressed = true;
 var shiftNotPressed = true;
 var upPressed = false;
 var leftPressed = false;
@@ -231,8 +231,8 @@ var rightPressed1 = false;
         if(keyActions[event.keyCode] === 'right'){
             rightPressed = true
         }
-        if(keyActions[event.keyCode] === 'q'){
-            qNotPressed = false
+        if(keyActions[event.keyCode] === 'e'){
+            eNotPressed = false
         }
         if(keyActions[event.keyCode] === 'shift'){
             shiftNotPressed = false
@@ -251,8 +251,8 @@ var rightPressed1 = false;
         if(keyActions[event.keyCode] === 'right'){
             rightPressed = false;
         }
-        if(keyActions[event.keyCode] === 'q'){
-            qNotPressed = true;
+        if(keyActions[event.keyCode] === 'e'){
+            eNotPressed = true;
         }
         if(keyActions[event.keyCode] === 'shift'){
             shiftNotPressed = true;

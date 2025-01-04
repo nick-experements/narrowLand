@@ -125,9 +125,10 @@
         position: absolute;
         height: 15%;
         width: auto;
-        top: 1%;
+        top: 10%;
         left: 10%;
         transition: 0.7s;
+        transform: translate(-50%, -50%);
     }
     #pressToPlay{
         text-decoration: underline black 3px;
