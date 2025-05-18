@@ -1,5 +1,5 @@
 
-    
+// TODO: extract to a single function     
 $('#pressToPlay').click(()=>{
     $('#pressToPlay').remove()
     $('#mainHead').remove()
@@ -171,26 +171,16 @@ var getDistanse = function(px, py, frx, fry ){
     var diffY = py - fry
     return Math.sqrt(diffX ** 2 + diffY **2 );
 }
-var getDistanse1 = function(px, p1x, py, p1y){
-    var diffX1 = px - p1x
-    var diffY1 = py - p1y
-    return Math.sqrt(diffX1 ** 2 + diffY1 **2 );
-}
-var getDistanse2 = function(px, py, fbx, fby){
-    var diffX2 = fbx - px
-    var diffY2 = fby - py
-    return Math.sqrt(diffX2 ** 2 + diffY2 **2 );
-}
-var getDistanse3 = function(frx, fbx, fry, fby){
-    var diffX3 = fbx - frx
-    var diffY3 = fby - fry
-    return Math.sqrt(diffX3 ** 2 + diffY3 **2 );
-}
-var getDistanse4 = function(frx, fbx, fry, fby){
-    var diffX4 = fbx - frx
-    var diffY4 = fby - fry
-    return Math.sqrt(diffX4 ** 2 + diffY4 **2 );
-}
+// var getDistanse3 = function(frx, fbx, fry, fby){
+//     var diffX3 = fbx - frx
+//     var diffY3 = fby - fry
+//     return Math.sqrt(diffX3 ** 2 + diffY3 **2 );
+// }
+// var getDistanse4 = function(frx, fbx, fry, fby){
+//     var diffX4 = fbx - frx
+//     var diffY4 = fby - fry
+//     return Math.sqrt(diffX4 ** 2 + diffY4 **2 );
+//}
 var distanse;
 var distanse1;
 var distanse2;
@@ -288,10 +278,10 @@ var rightPressed1 = false;
     })
     var intervalId = setInterval(()=>{
         distanse = getDistanse(player.x, player.y, flagR.x, flagR.y)
-        distanse1 = getDistanse1(player.x, player1.x, player.y, player1.y)
-        distanse2 = getDistanse2(player1.x, player1.y, flagB.x, flagB.y)
-        distanse3 = getDistanse1(xOfRedFlag, flagB.x, yOfRedFlag, flagB.y)
-        distanse4 = getDistanse1(flagR.x, xOfBlueFlag, flagR.y, yOfBlueFlag)
+        distanse1 = getDistanse(player.x, player.y, player1.x, player1.y)
+        distanse2 = getDistanse(player1.x, player1.y, flagB.x, flagB.y)
+        distanse3 = getDistanse(xOfRedFlag, yOfRedFlag, flagB.x,  flagB.y)
+        distanse4 = getDistanse(flagR.x, flagR.y, xOfBlueFlag, yOfBlueFlag)
         if(upPressed){
             player1.moveUp()
         }
