@@ -35,31 +35,43 @@ Player.prototype.draw = function() {
 };
 
 Player.prototype.moveLeft = function () {
-    this.x -= this.speed;
-    this.playerElement.css({
-        left: this.x,
-        top: this.y
-    });
+    const nextX = this.x-this.speed
+    if (nextX >= 0){
+        
+        this.x = nextX;
+        this.playerElement.css({
+            left: this.x,
+            top: this.y,
+        })
+    }
 };
 
 Player.prototype.moveUp = function () {
-    this.y -= this.speed;
+    const nextY = this.y-this.speed
+    if (nextY >= 0){
+    this.y = nextY;
     this.playerElement.css({
         left: this.x,
         top: this.y
     });
+    }
 };
 Player.prototype.moveDown = function () {
-    this.y += this.speed;
+    const nextY = this.y+this.speed
+    if (nextY <= screen.height){
+        this.y = nextY;
     this.playerElement.css({
         left: this.x,
         top: this.y
     });
+    }
+
 };
 Player.prototype.moveRight = function(){
-    if (this.x < screen.width){
+    const nextX = this.x+this.speed
+    if (nextX <= screen.width){
         
-        this.x += this.speed;
+        this.x = nextX
         this.playerElement.css({
             left: this.x,
             top: this.y,
